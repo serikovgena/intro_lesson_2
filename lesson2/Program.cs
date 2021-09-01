@@ -5,11 +5,12 @@ namespace lesson2
     class Program
     {
         static void Main(string[] args) {
-            GetAvarageDayTempreture();
-            GetMonthByNumber();
-            CheckParityOfNumber();
-            PrintCheck();
-            HowWeatherInWinterMonth();
+            // GetAvarageDayTempreture();
+            // GetMonthByNumber();
+            // CheckParityOfNumber();
+            // PrintCheck();
+            // HowWeatherInWinterMonth();
+            OfficeWorkDays();
         }
 
         static void GetAvarageDayTempreture() {
@@ -85,6 +86,14 @@ $@"************************************************
             else {
               Console.WriteLine($"{month} - не зимний месяц");
             }
+        }
+
+        static void OfficeWorkDays() {
+            WeekDay officeWorkingDaysA = WeekDay.Понедельник | WeekDay.Среда | WeekDay.Пятница;
+            Console.WriteLine($"офис А работает в {officeWorkingDaysA}");
+
+            WeekDay officeWorkingDaysB = (WeekDay)0b0011111;
+            Console.WriteLine($"офис Б работает в {officeWorkingDaysB}");
         }
     }
 }
