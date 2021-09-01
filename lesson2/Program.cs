@@ -10,7 +10,8 @@ namespace lesson2
             // CheckParityOfNumber();
             // PrintCheck();
             // HowWeatherInWinterMonth();
-            OfficeWorkDays();
+            // OfficeWorkDays();
+            ShowPolindrom();
         }
 
         static void GetAvarageDayTempreture() {
@@ -94,6 +95,26 @@ $@"************************************************
 
             WeekDay officeWorkingDaysB = (WeekDay)0b0011111;
             Console.WriteLine($"офис Б работает в {officeWorkingDaysB}");
+        }
+
+        static void ShowPolindrom() {
+            Console.Write("Введите слово: ");
+            var word = Console.ReadLine();
+
+            if(IsPolindrom(word)) {
+                Console.WriteLine($"{word} - это палиндром");
+            }
+            else {
+                Console.WriteLine($"{word} - это не палиндром");
+            }
+        }
+
+        static bool IsPolindrom(string word) {
+            bool result = true;
+            for(int i = 0, j = word.Length -1; i < j; i++,j--) {
+                result = result && (word[i] == word[j]);
+            }
+            return result;
         }
     }
 }
