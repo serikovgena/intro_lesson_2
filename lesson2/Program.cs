@@ -6,7 +6,8 @@ namespace lesson2
     {
         static void Main(string[] args) {
             //GetAvarageDayTempreture();
-            GetMonthByNumber();
+            //GetMonthByNumber();
+            CheckParityOfNumber();
         }
 
         static void GetAvarageDayTempreture() {
@@ -24,6 +25,12 @@ namespace lesson2
             Console.Write("Введите номер месяца: ");
             int monthNum = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine($"Вы указали {(new DateTime(1, monthNum, 1)).ToString("MMMM")}");
+        }
+
+        static void CheckParityOfNumber() {
+            Console.Write("Введите целое число: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Указанное число {number} { (number % 2 == 0 ? "четное" : "нечетное") }");
         }
     }
 }
