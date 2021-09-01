@@ -5,7 +5,8 @@ namespace lesson2
     class Program
     {
         static void Main(string[] args) {
-            GetAvarageDayTempreture();
+            //GetAvarageDayTempreture();
+            GetMonthByNumber();
         }
 
         static void GetAvarageDayTempreture() {
@@ -17,6 +18,12 @@ namespace lesson2
 
             double result = (minTemp + maxTemp) / 2;
             Console.WriteLine($"Средняя температура за сутки была: {result}");
+        }
+
+        static void GetMonthByNumber() {
+            Console.Write("Введите номер месяца: ");
+            int monthNum = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine($"Вы указали {(new DateTime(1, monthNum, 1)).ToString("MMMM")}");
         }
     }
 }
