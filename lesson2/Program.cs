@@ -9,6 +9,7 @@ namespace lesson2
             GetMonthByNumber();
             CheckParityOfNumber();
             PrintCheck();
+            HowWeatherInWinterMonth();
         }
 
         static void GetAvarageDayTempreture() {
@@ -62,6 +63,28 @@ $@"************************************************
 **************************************************";
 
             Console.WriteLine(checkView);
+        }
+
+        static void HowWeatherInWinterMonth() {
+            Monthes winter =  Monthes.Декабрь | Monthes.Январь | Monthes.Февраль;
+
+            Console.Write("Скажите сколько градусов на улице: ");
+            double dayTemperature = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("А месяц какой: ");
+            int monthNum = Convert.ToInt32(Console.ReadLine());
+
+            Monthes month = (Monthes)(1 << (monthNum-1));
+            bool isWinterMonth = (winter & month) > 0;
+            if(isWinterMonth) {
+              Console.WriteLine($"{month} - зимний месяц");
+              if(dayTemperature > 0) {
+                  Console.WriteLine("да еще и дождливый(");
+              }
+            }
+            else {
+              Console.WriteLine($"{month} - не зимний месяц");
+            }
         }
     }
 }
